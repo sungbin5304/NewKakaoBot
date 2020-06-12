@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KakaoBot</string>
+    <string name="bot_working">봇이 작동된지...</string>
+</resources>
