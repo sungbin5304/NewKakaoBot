@@ -4,14 +4,20 @@ import android.os.Bundle
 import com.google.android.material.appbar.AppBarLayout
 import com.sungbin.kakaobot.R
 import com.sungbin.kakaobot.listener.AppBarStateChangeListener
+import com.sungbin.kakaobot.model.PersonModel
 import com.sungbin.kakaobot.ui.fragment.main.MainFragment
 import com.sungbin.kakaobot.utils.TimeManager
+import com.sungbin.sungbintool.LogUtils
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
+
+    @Inject
+    lateinit var person: PersonModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +28,8 @@ class MainActivity : BaseActivity() {
                     .replace(R.id.container, MainFragment.newInstance())
                     .commitNow()
         }
+
+        LogUtils.d("Activity", person.toString())
 
         abl_appbar.addOnOffsetChangedListener(object : AppBarStateChangeListener() {
             override fun onStateChanged(appBarLayout: AppBarLayout?, state: State?) {

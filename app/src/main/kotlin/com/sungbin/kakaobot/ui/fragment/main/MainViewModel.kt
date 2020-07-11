@@ -8,8 +8,8 @@ import com.sungbin.kakaobot.model.PersonModel
 import javax.inject.Inject
 
 class MainViewModel @ViewModelInject constructor(
-    private val person: PersonModel,
+    private val personData: PersonModel,
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
-    val test = person
+    val person = personData
 }

@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import com.sungbin.kakaobot.R
 import com.sungbin.kakaobot.model.PersonModel
 import com.sungbin.kakaobot.ui.fragment.BaseFragment
+import com.sungbin.sungbintool.LogUtils
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 import javax.inject.Inject
@@ -24,6 +25,9 @@ class MainFragment : BaseFragment(){
     private val timer = Timer()
     private val viewModel: MainViewModel by viewModels()
 
+    @Inject
+    lateinit var person: PersonModel
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_main, container, false)
@@ -32,6 +36,7 @@ class MainFragment : BaseFragment(){
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel.test.toString().toastS(context)
+        LogUtils.d("ModelView", viewModel.person.toString())
+        LogUtils.d("Fragment", person.toString())
     }
 }
