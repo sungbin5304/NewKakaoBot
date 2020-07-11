@@ -1,4 +1,33 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="TypographyEllipsis">
+
     <string name="app_name">KakaoBot</string>
+
     <string name="bot_working">봇이 작동된지...</string>
+
+    <string name="dashboard">대시보드</string>
+    <string name="tools">도구</string>
+    <string name="setting">설정</string>
+    <string name="sandbox">테스트방</string>
+
+    <string name="fixed">고정됨</string>
+    <string name="bot">봇</string>
+    <string name="log">로그</string>
+    <string name="database">데이터베이스</string>
+
+    <string name="view">보기</string>
+    <string name="remove">삭제</string>
+
+    <string name="now_bot_working">봇 작동중...</string>
+    <string name="now_bot_stop">현재 봇이 꺼져있습니다.</string>
+    <string name="bot_off">봇 종료</string>
+    <string name="bot_start">봇 시작</string>
+    <string name="string_close">닫기</string>
+    <string name="bot_reload">봇 리로드</string>
+    <string name="bot_work_stop">봇 작동이 중지됩니다.</string>
+    <string name="bot_work_start">봇 작동이 시작됩니다.</string>
+
+    <string name="bot_none">추가된 봇이 없어요</string>
+    <string name="log_none">작성된 로그가 없어요</string>
+
 </resources>

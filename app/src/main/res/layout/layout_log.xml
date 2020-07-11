@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="@dimen/margin_twice_half"
+        android:layout_marginStart="@dimen/margin_half"
+        android:layout_marginEnd="@dimen/margin_half"
+        tools:ignore="MissingConstraints,RtlSymmetry,ContentDescription,UselessParent">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_info_outline_white_24dp"
+        android:tint="@color/colorGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_menu"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_baseline_menu_24"
+        android:tint="@color/colorGray"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:layout_marginEnd="@dimen/margin_half"
+        android:layout_marginStart="@dimen/margin_half"
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/nanumgothic"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/log"
+        android:textColor="@color/colorGray"
+        app:layout_constraintEnd_toStartOf="@+id/iv_menu"
+        app:layout_constraintStart_toEndOf="@+id/iv_icon" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nanumgothic"
+        android:text="@string/log"
+        android:textColor="@color/colorGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_menu" />
+
+    <TextView
+        android:layout_marginEnd="@dimen/margin_half"
+        android:layout_marginStart="@dimen/margin_half"
+        android:id="@+id/tv_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/nanumgothic"
+        android:maxLines="1"
+        android:paddingEnd="25dp"
+        android:singleLine="true"
+        android:text="@string/log"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_time"
+        app:layout_constraintStart_toEndOf="@+id/iv_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

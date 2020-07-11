@@ -48,47 +48,67 @@ open class BaseFragment : Fragment(){
         } ?: LogUtils.e("Toast Context is null.")
     }
 
-    fun View.show() {
-        YoYo
-            .with(Techniques.FadeIn)
-            .withListener(object : Animator.AnimatorListener {
-                override fun onAnimationRepeat(p0: Animator?) {
-                }
+    fun View.show(showAnimation: Boolean = true) {
+        if (showAnimation) {
+            YoYo
+                .with(Techniques.FadeIn)
+                .withListener(object : Animator.AnimatorListener {
+                    override fun onAnimationRepeat(p0: Animator?) {
+                    }
 
-                override fun onAnimationEnd(p0: Animator?) {
-                }
+                    override fun onAnimationEnd(p0: Animator?) {
+                    }
 
-                override fun onAnimationCancel(p0: Animator?) {
-                }
+                    override fun onAnimationCancel(p0: Animator?) {
+                    }
 
-                override fun onAnimationStart(p0: Animator?) {
-                    this@show.visibility = View.VISIBLE
-                }
+                    override fun onAnimationStart(p0: Animator?) {
+                        this@show.visibility = View.VISIBLE
+                    }
 
-            })
-            .duration(500)
-            .playOn(this)
+                })
+                .duration(500)
+                .playOn(this)
+        }
+        else {
+            this.visibility = View.VISIBLE
+        }
     }
 
-    fun View.hide() {
-        YoYo
-            .with(Techniques.FadeOut)
-            .withListener(object : Animator.AnimatorListener {
-                override fun onAnimationRepeat(p0: Animator?) {
-                }
+    fun View.hide(showAnimation: Boolean = true, isInvisible: Boolean = false) {
+        if (showAnimation) {
+            YoYo
+                .with(Techniques.FadeOut)
+                .withListener(object : Animator.AnimatorListener {
+                    override fun onAnimationRepeat(p0: Animator?) {
+                    }
 
-                override fun onAnimationEnd(p0: Animator?) {
-                    this@hide.visibility = View.GONE
-                }
+                    override fun onAnimationEnd(p0: Animator?) {
+                        if (isInvisible) {
+                            this@hide.visibility = View.INVISIBLE
+                        }
+                        else {
+                            this@hide.visibility = View.GONE
+                        }
+                    }
 
-                override fun onAnimationCancel(p0: Animator?) {
-                }
+                    override fun onAnimationCancel(p0: Animator?) {
+                    }
 
-                override fun onAnimationStart(p0: Animator?) {
-                }
+                    override fun onAnimationStart(p0: Animator?) {
+                    }
 
-            })
-            .duration(500)
-            .playOn(this)
+                })
+                .duration(500)
+                .playOn(this)
+        }
+        else {
+            if (isInvisible) {
+                this@hide.visibility = View.INVISIBLE
+            }
+            else {
+                this@hide.visibility = View.GONE
+            }
+        }
     }
 }

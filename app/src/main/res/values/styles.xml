@@ -3,6 +3,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="textAllCaps">false</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -10,10 +11,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppThemeWhiteStatusBar" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="AppThemeWhiteStatusBar" parent="AppTheme">
         <item name="android:statusBarColor">@color/colorWhite</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
     </style>
