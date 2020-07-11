@@ -81,4 +81,5 @@ dependencies {
     androidTestImplementation(AndroidTestLibraries.Espresso)
 
     kapt(Libraries.DI.HiltCompiler)
+    kapt("androidx.hilt:hilt-compiler:1.0.0-alpha01")
 }

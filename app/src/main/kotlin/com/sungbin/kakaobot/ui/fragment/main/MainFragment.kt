@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.sungbin.kakaobot.R
+import com.sungbin.kakaobot.model.PersonModel
 import com.sungbin.kakaobot.ui.fragment.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -20,7 +22,7 @@ class MainFragment : BaseFragment(){
     }
 
     private val timer = Timer()
-    private val viewModel by viewModels<MainViewModel>()
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -31,10 +33,5 @@ class MainFragment : BaseFragment(){
         super.onActivityCreated(savedInstanceState)
 
         viewModel.test.toString().toastS(context)
-
-        /*viewModel = ViewModelProvider(
-            this,
-            MainViewModelFactory(context)
-        )[MainViewModel::class.java]*/
     }
 }
