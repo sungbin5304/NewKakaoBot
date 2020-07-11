@@ -4,25 +4,18 @@ import android.os.Bundle
 import com.google.android.material.appbar.AppBarLayout
 import com.sungbin.kakaobot.R
 import com.sungbin.kakaobot.listener.AppBarStateChangeListener
-import com.sungbin.kakaobot.model.PersonModel
 import com.sungbin.kakaobot.ui.fragment.main.MainFragment
 import com.sungbin.kakaobot.utils.TimeManager
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
-    @Inject
-    lateinit var person: PersonModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        person.toString().toastS(applicationContext)
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()

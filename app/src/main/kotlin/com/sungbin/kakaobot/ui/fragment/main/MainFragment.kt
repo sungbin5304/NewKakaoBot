@@ -5,13 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.sungbin.kakaobot.R
 import com.sungbin.kakaobot.ui.fragment.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
-import kotlin.time.ExperimentalTime
 
 
+@AndroidEntryPoint
 class MainFragment : BaseFragment(){
 
     companion object {
@@ -19,20 +20,21 @@ class MainFragment : BaseFragment(){
     }
 
     private val timer = Timer()
-    private lateinit var viewModel: MainViewModel
+    private val viewModel by viewModels<MainViewModel>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
-    @ExperimentalTime
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel = ViewModelProvider(
+        viewModel.test.toString().toastS(context)
+
+        /*viewModel = ViewModelProvider(
             this,
             MainViewModelFactory(context)
-        )[MainViewModel::class.java]
+        )[MainViewModel::class.java]*/
     }
 }

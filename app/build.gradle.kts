@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Apps.compileSdk)
+    compileSdkVersion(Application.compileSdk)
     defaultConfig {
-        minSdkVersion(Apps.minSdk)
-        targetSdkVersion(Apps.targetSdk)
-        versionCode = Apps.versionCode
-        versionName = Apps.versionName
+        minSdkVersion(Application.minSdk)
+        targetSdkVersion(Application.targetSdk)
+        versionCode = Application.versionCode
+        versionName = Application.versionName
         multiDexEnabled = true
         setProperty("archivesBaseName", "v$versionName($versionCode)")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -36,8 +36,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = Versions.sourceCompat
-        targetCompatibility = Versions.targetCompat
+        sourceCompatibility = Application.sourceCompat
+        targetCompatibility = Application.targetCompat
+    }
+
+    kotlinOptions {
+        jvmTarget = Application.jvmTarget
     }
 }
 
@@ -45,14 +49,17 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(Libraries.ESSENTIAL.Anko)
-    implementation(Libraries.ESSENTIAL.Core)
+    implementation(Libraries.ESSENTIAL.CoreKtx)
     implementation(Libraries.ESSENTIAL.Legacy)
     implementation(Libraries.ESSENTIAL.Kotlin)
     implementation(Libraries.ESSENTIAL.AppCompat)
+    implementation(Libraries.ESSENTIAL.FragmentKtx)
     implementation(Libraries.ESSENTIAL.LifeCycleViewModel)
     implementation(Libraries.ESSENTIAL.LifeCycleExtensions)
 
     implementation(Libraries.DI.Hilt)
+    implementation(Libraries.DI.HiltCommon)
+    implementation(Libraries.DI.HiltLifeCycle)
 
     implementation(Libraries.UI.Fab)
     implementation(Libraries.UI.Glide)

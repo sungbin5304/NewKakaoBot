@@ -1,8 +1,6 @@
 package com.sungbin.kakaobot.ui.fragment.main
 
-import android.content.Context
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 
-class MainViewModel(context: Context?) : ViewModel() {
-
-}
+class MainViewModel @ViewModelInject constructor(var test: Int) : ViewModel()

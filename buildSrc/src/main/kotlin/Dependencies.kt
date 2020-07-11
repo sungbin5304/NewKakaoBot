@@ -1,23 +1,29 @@
 import org.gradle.api.JavaVersion
 
-object Apps {
+object Application {
     const val compileSdk = 29
     const val minSdk = 21
     const val targetSdk = 29
     const val versionCode = 1
     const val versionName = "1.0.0"
+    const val jvmTarget = "1.8"
+
+    val sourceCompat = JavaVersion.VERSION_1_8
+    val targetCompat = JavaVersion.VERSION_1_8
 }
 
 object Versions {
     const val Kotlin = "1.3.50"
     const val AppCompat = "1.0.2"
-    const val Core = "1.3.0"
+    const val CoreKtx = "1.3.0"
     const val Legacy = "1.0.0"
     const val LifeCycleExtensions = "2.2.0"
     const val LifeCycleViewModel = "2.2.0"
     const val Anko = "0.10.8"
+    const val FragmentKtx = "1.2.5"
 
     const val Hilt = "2.28-alpha"
+    const val HiltAndroidX = "1.0.0-alpha01"
 
     const val CardView = "1.0.0"
     const val ConstraintLayout = "1.1.3"
@@ -37,25 +43,25 @@ object Versions {
     const val AndroidJunit = "4.12"
     const val AndroidTestJunit = "1.1.1"
     const val AndroidTestEspresso = "3.2.0"
-
-    val sourceCompat = JavaVersion.VERSION_1_8
-    val targetCompat = JavaVersion.VERSION_1_8
 }
 
 object Libraries {
     object ESSENTIAL {
         const val Kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.Kotlin}"
         const val AppCompat = "androidx.appcompat:appcompat:${Versions.AppCompat}"
-        const val Core = "androidx.core:core-ktx:${Versions.Core}"
+        const val CoreKtx = "androidx.core:core-ktx:${Versions.CoreKtx}"
         const val Legacy = "androidx.legacy:legacy-support-core-ui:${Versions.Legacy}"
         const val LifeCycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.LifeCycleExtensions}"
         const val LifeCycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LifeCycleViewModel}"
         const val Anko = "org.jetbrains.anko:anko:${Versions.Anko}"
+        const val FragmentKtx = "androidx.fragment:fragment-ktx:${Versions.FragmentKtx}"
     }
 
     object DI {
         const val Hilt = "com.google.dagger:hilt-android:${Versions.Hilt}"
         const val HiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.Hilt}"
+        const val HiltCommon = "androidx.hilt:hilt-common:${Versions.HiltAndroidX}"
+        const val HiltLifeCycle = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.HiltAndroidX}"
     }
 
     object UI {
