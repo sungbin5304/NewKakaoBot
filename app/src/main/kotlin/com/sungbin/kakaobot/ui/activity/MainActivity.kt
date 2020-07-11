@@ -1,15 +1,12 @@
 package com.sungbin.kakaobot.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.appbar.AppBarLayout
 import com.sungbin.kakaobot.R
 import com.sungbin.kakaobot.listener.AppBarStateChangeListener
 import com.sungbin.kakaobot.model.PersonModel
-import com.sungbin.kakaobot.module.PersonModule
 import com.sungbin.kakaobot.ui.fragment.main.MainFragment
 import com.sungbin.kakaobot.utils.TimeManager
-import com.sungbin.sungbintool.ToastUtils
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
