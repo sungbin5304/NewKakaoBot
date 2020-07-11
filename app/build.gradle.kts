@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("dagger.hilt.android.plugin")
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
@@ -43,29 +44,34 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(Libraries.ESSENTIAL.ANKO)
-    implementation(Libraries.ESSENTIAL.CORE)
-    implementation(Libraries.ESSENTIAL.LEGACY)
-    implementation(Libraries.ESSENTIAL.KOTLIN)
+    implementation(Libraries.ESSENTIAL.Anko)
+    implementation(Libraries.ESSENTIAL.Core)
+    implementation(Libraries.ESSENTIAL.Legacy)
+    implementation(Libraries.ESSENTIAL.Kotlin)
     implementation(Libraries.ESSENTIAL.AppCompat)
     implementation(Libraries.ESSENTIAL.LifeCycleViewModel)
     implementation(Libraries.ESSENTIAL.LifeCycleExtensions)
 
-    implementation(Libraries.UI.GLIDE)
+    implementation(Libraries.DI.Hilt)
+
+    implementation(Libraries.UI.Fab)
+    implementation(Libraries.UI.Glide)
     implementation(Libraries.UI.CardView)
     implementation(Libraries.UI.ConstraintLayout)
 
-    implementation(Libraries.UTILS.JSOUP)
-    implementation(Libraries.UTILS.RHINO)
+    implementation(Libraries.UTILS.Jsoup)
+    implementation(Libraries.UTILS.Rhino)
     implementation(Libraries.UTILS.RhinoAndroid)
     implementation(Libraries.UTILS.AndroidUtils)
     implementation(Libraries.UTILS.AdapterHelper)
     implementation(Libraries.UTILS.CrashReporter)
 
-    implementation(Libraries.ANIMATOR.TOOL)
-    implementation(Libraries.ANIMATOR.YOYO)
+    implementation(Libraries.ANIMATOR.Tool)
+    implementation(Libraries.ANIMATOR.Yoyo)
 
-    testImplementation(TestLibrary.JUNIT)
-    androidTestImplementation(AndroidTestLibraries.JUNIT)
-    androidTestImplementation(AndroidTestLibraries.ESPRESSO)
+    testImplementation(TestLibrary.Junit)
+    androidTestImplementation(AndroidTestLibraries.Junit)
+    androidTestImplementation(AndroidTestLibraries.Espresso)
+
+    kapt(Libraries.DI.HiltCompiler)
 }

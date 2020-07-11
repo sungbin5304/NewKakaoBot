@@ -1,4 +1,4 @@
-package com.sungbin.kakaobot.ui.main
+package com.sungbin.kakaobot.ui.fragment.main
 
 import android.content.Context
 import androidx.lifecycle.ViewModel

@@ -15,14 +15,15 @@
         android:layout_height="250dp"
         android:fitsSystemWindows="true"
         android:background="@color/colorWhite"
+        android:backgroundTint="@color/colorWhite"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorWhite"
             android:fitsSystemWindows="true"
+            app:statusBarScrim="@color/colorWhite"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="@color/colorWhite">
 
@@ -90,6 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorWhite"
+                android:backgroundTint="@color/colorWhite"
                 app:layout_collapseMode="pin">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -137,31 +139,13 @@
         android:layout_height="match_parent"
         android:padding="@dimen/margin_default"
         android:background="@color/colorWhite"
+        app:layout_anchorGravity="bottom"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="aaaaaaa" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="aaaaaa" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="aa" />
-
-        </LinearLayout>
+            android:layout_height="match_parent"/>
 
     </androidx.core.widget.NestedScrollView>
 
