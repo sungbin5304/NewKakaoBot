@@ -1,96 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="160dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="3dp"
-        android:elevation="0dp"
-        android:id="@+id/fy_main_view"
-        app:elevation="0dp"
-        android:orientation="vertical"
-        android:focusableInTouchMode="true"
-        tools:ignore="ContentDescription,UselessParent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fy_main_view"
+    android:layout_width="160dp"
+    android:layout_height="121dp"
+    android:layout_marginStart="1dp"
+    android:layout_marginEnd="1dp"
+    android:layout_marginBottom="3dp"
+    android:elevation="0dp"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    app:elevation="0dp"
+    tools:ignore="ContentDescription,UselessParent" >
 
     <com.sungbin.sungbintool.ui.TagableRoundImageView
-            android:id="@+id/iv_type"
-            android:layout_marginTop="@dimen/margin_half"
-            android:layout_marginBottom="@dimen/margin_half"
-            android:layout_marginStart="13dp"
-            android:elevation="@dimen/margin_half"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_javascript"
-            app:elevation="@dimen/margin_half"
-            app:triv_imageRadius="@dimen/margin_half"/>
+        android:id="@+id/iv_type"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="@dimen/margin_half"
+        android:layout_marginBottom="@dimen/margin_half"
+        android:elevation="@dimen/margin_half"
+        android:src="@drawable/ic_javascript"
+        app:elevation="@dimen/margin_half"
+        app:triv_imageRadius="@dimen/margin_half" />
 
     <androidx.cardview.widget.CardView
-            android:layout_marginTop="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="85dp"
-            app:cardBackgroundColor="@color/colorTwiceLightGray"
-            app:cardCornerRadius="10dp">
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="@color/colorTwiceLightGray"
+        app:cardCornerRadius="10dp" >
 
         <Switch
-                android:id="@+id/sw_script_power"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="80dp" />
+            android:id="@+id/sw_power"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp" />
 
         <ImageView
-                android:id="@+id/iv_menu"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/ic_baseline_menu_24"
-                android:tint="@color/colorGray"
-                android:layout_marginStart="130dp"/>
+            android:id="@+id/iv_menu"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="130dp"
+            android:src="@drawable/ic_baseline_menu_24"
+            android:tint="@color/colorGray" />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
 
             <View
-                    android:id="@+id/view_reload_state"
-                    android:layout_width="7dp"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/colorGreen"
-                    android:background="@drawable/reload_status_view"/>
+                android:id="@+id/view_reload_status"
+                android:layout_width="7dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/reload_status_view"
+                android:backgroundTint="@color/colorGreen" />
 
             <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
 
                 <TextView
-                        android:layout_marginTop="40dp"
-                        android:fontFamily="@font/nanumgothic"
-                        android:id="@+id/tv_script_name"
-                        android:layout_marginStart="@dimen/margin_half"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/bot"
-                        android:textStyle="bold"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:textSize="15sp"
-                        android:textColor="#000"/>
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_half"
+                    android:layout_marginTop="40dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/bot"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                        android:layout_marginTop="@dimen/margin_twice_half"
-                        android:fontFamily="@font/nanumgothic"
-                        android:layout_marginStart="@dimen/margin_half"
-                        android:id="@+id/tv_script_run_time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/bot"
-                        android:textSize="13sp"
-                        android:maxLines="1"
-                        android:textColor="@color/colorGray"/>
+                    android:id="@+id/tv_last_run_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_half"
+                    android:layout_marginTop="@dimen/margin_twice_half"
+                    android:maxLines="1"
+                    android:text="@string/bot"
+                    android:textColor="@color/colorGray"
+                    android:textSize="13sp" />
 
             </LinearLayout>
 

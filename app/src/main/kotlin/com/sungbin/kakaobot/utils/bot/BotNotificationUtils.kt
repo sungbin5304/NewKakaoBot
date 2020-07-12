@@ -1,18 +1,13 @@
 package com.sungbin.kakaobot.utils.bot
 
-import android.app.NotificationChannel
-import android.app.NotificationChannelGroup
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
-import android.content.Intent
-import android.os.Build
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
+import android.app.*
+import android.content.*
+import android.os.*
+import androidx.core.app.*
 import com.sungbin.kakaobot.R
-import com.sungbin.kakaobot.receiver.NotificationActionClickReceiver
-import com.sungbin.kakaobot.ui.activity.MainActivity
-import com.sungbin.sungbintool.DataUtils
+import com.sungbin.kakaobot.receiver.*
+import com.sungbin.kakaobot.ui.activity.*
+import com.sungbin.sungbintool.*
 
 @Suppress("DEPRECATION")
 object BotNotificationUtils {
@@ -20,15 +15,15 @@ object BotNotificationUtils {
     private val icon: Int
         get() = R.mipmap.ic_launcher
 
-    private fun getAppName(context: Context): String{
+    private fun getAppName(context: Context): String {
         return context.getString(R.string.app_name)
     }
 
-    private fun getBotOnContent(context: Context): String{
+    private fun getBotOnContent(context: Context): String {
         return context.getString(R.string.now_bot_working)
     }
 
-    private fun getBotOffContent(context: Context): String{
+    private fun getBotOffContent(context: Context): String {
         return context.getString(R.string.now_bot_stop)
     }
 
@@ -73,7 +68,7 @@ object BotNotificationUtils {
         return context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
     }
 
-    private fun setBuilder(context: Context, builder: NotificationCompat.Builder){
+    private fun setBuilder(context: Context, builder: NotificationCompat.Builder) {
         val startPendingIntent = PendingIntent.getBroadcast(
             context,
             0,
@@ -146,17 +141,16 @@ object BotNotificationUtils {
                 PendingIntent.FLAG_UPDATE_CURRENT
             )
 
-        val botPowerOn = DataUtils.readData(context, "BotOn", "true").toBoolean()
+        val botPowerOn = DataUtils.readData(context, "BotPower", "true").toBoolean()
 
-        if(botPowerOn) { //봇 켜짐 -> 봇 끄기
+        if (botPowerOn) { //봇 켜짐 -> 봇 끄기
             builder.addAction(stopAction)
             builder.setContentText(
                 getBotOnContent(
                     context
                 )
             )
-        }
-        else { //봇 꺼짐 -> 봇 켜기, 노티 닫기
+        } else { //봇 꺼짐 -> 봇 켜기, 노티 닫기
             builder.addAction(startAction)
             builder.addAction(deleteAction)
             builder.setContentText(
@@ -192,8 +186,7 @@ object BotNotificationUtils {
             getManager(
                 context
             ).notify(1000, builder.build())
-        }
-        else {
+        } else {
             val builder = NotificationCompat.Builder(context)
                 .setContentTitle(
                     getAppName(

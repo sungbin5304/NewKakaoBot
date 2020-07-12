@@ -1,8 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="TypographyEllipsis">
+           tools:ignore="TypographyEllipsis">
 
     <string name="app_name">KakaoBot</string>
 
+    <string name="copied_clipboard">클립보드에 복사되었습니다.</string>
     <string name="bot_working">봇이 작동된지...</string>
 
     <string name="dashboard">대시보드</string>
@@ -30,4 +31,55 @@
     <string name="bot_none">추가된 봇이 없어요</string>
     <string name="log_none">작성된 로그가 없어요</string>
 
+    <string name="experimental_function">실험적 기능</string>
+    <string name="sandbox_experimental_function_description">센드박스는 실험적인 기능입니다.\n때때로 의도한대로 작동하지 않을 수
+        있습니다.\n양해 부탁드립니다.
+    </string>
+    <string name="editor_experimental_function_description">스크립트 에디터에 실험적인 기능이 있습니다.\n때때로 의도한대로 작동하지
+        않을 수 있습니다.\n양해 부탁드립니다.\n\n또한 에디터에서 작성중인 내용이 저장되지 않을 수 있습니다.\n즉 내용을 수시로 복사하여 백업해두시는걸
+        추천드립니다.(저장시 자동 복사)
+    </string>
+
+    <string name="find_content">찾을 내용</string>
+    <string name="ignore_upper">대소문자 무시</string>
+    <string name="find_none">결과 없음</string>
+
+    <string name="auto_complete_with_enter">자동\n왼성</string>
+    <string name="redo_done">앞으로 되돌리기</string>
+    <string name="undo_done">전으로 되돌리기</string>
+    <string name="indent">안쪽 들여쓰기</string>
+    <string name="undo">되돌리기</string>
+    <string name="editor">에디터</string>
+    <string name="redo">다시하기</string>
+    <string name="search">검색</string>
+    <string name="replace">바꾸기</string>
+    <string name="highlighting">하이라이팅</string>
+    <string name="auto_complete">자동 완성</string>
+    <string name="other">기타</string>
+    <string name="save">저장</string>
+
+    <string name="saved">저장되었습니다.</string>
+    <string name="auto_saved">자동저장 되었습니다.</string>
+    <string name="add_new_bot">새로운 봇 추가</string>
+    <string name="javascript">자바스크립트</string>
+    <string name="simple_reply">단순 자동응답</string>
+    <string name="script_name">스크립트 이름</string>
+
+    <string name="power_on">Power On</string>
+    <string name="power_off">Power Off</string>
+    <string name="cant_load_session">메세지를 전송할 방의 세션을 가져오지 못했습니다.</string>
+    <string name="script_file_gone">스크립트 파일이 존재하지 않습니다.</string>
+    <string name="reload_script_first">{name} 스크립트 리로드를 먼저 해 주세요</string>
+
+    <string name="reload">리로드</string>
+    <string name="bot_name">이름</string>
+    <string name="edit">수정</string>
+    <string name="description">설명</string>
+    <string name="source">소스</string>
+    <string name="share">공유</string>
+    <string name="delete">삭제</string>
+    <string name="danger">위험</string>
+
+    <string name="reloading">리로드중...</string>
+    <string name="deleted">삭제되었습니다.</string>
 </resources>

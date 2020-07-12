@@ -1,11 +1,10 @@
 package com.sungbin.kakaobot.ui.fragment.dashboard
 
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
-import com.sungbin.kakaobot.model.BotModel
-import javax.inject.Named
+import androidx.hilt.*
+import androidx.hilt.lifecycle.*
+import androidx.lifecycle.*
+import com.sungbin.kakaobot.model.*
+import javax.inject.*
 
 class DashboardViewModel @ViewModelInject constructor(
     @Named("JS") private val jsBotData: ArrayList<BotModel>,

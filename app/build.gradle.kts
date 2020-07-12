@@ -49,11 +49,13 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(Dependencies.Essential.Anko)
-    implementation(Dependencies.Essential.CoreKtx)
     implementation(Dependencies.Essential.Legacy)
     implementation(Dependencies.Essential.Kotlin)
+    implementation(Dependencies.Essential.CoreKtx)
     implementation(Dependencies.Essential.AppCompat)
+    implementation(Dependencies.Essential.Coroutine)
     implementation(Dependencies.Essential.FragmentKtx)
+    implementation(Dependencies.Essential.CoroutineCore)
     implementation(Dependencies.Essential.LifeCycleViewModel)
     implementation(Dependencies.Essential.LifeCycleExtensions)
 
@@ -63,11 +65,15 @@ dependencies {
 
     implementation(Dependencies.Ui.Glide)
     implementation(Dependencies.Ui.CardView)
+    implementation(Dependencies.Ui.PopupMenu)
+    implementation(Dependencies.Ui.CodeEditor)
+    implementation(Dependencies.Ui.SweetDialog)
     implementation(Dependencies.Ui.ConstraintLayout)
 
     implementation(Dependencies.Utils.Jsoup)
     implementation(Dependencies.Utils.Rhino)
     implementation(Dependencies.Utils.RhinoAndroid)
+    implementation(Dependencies.Utils.KoreanParser)
     implementation(Dependencies.Utils.AndroidUtils)
     implementation(Dependencies.Utils.AdapterHelper)
     implementation(Dependencies.Utils.CrashReporter)

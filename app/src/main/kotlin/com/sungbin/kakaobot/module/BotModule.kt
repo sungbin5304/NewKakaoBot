@@ -1,18 +1,14 @@
 package com.sungbin.kakaobot.module
 
-import com.sungbin.kakaobot.KakaoBot
-import com.sungbin.kakaobot.model.BotModel
-import com.sungbin.kakaobot.utils.bot.BotPathManager
-import com.sungbin.kakaobot.utils.bot.BotPinUtils
-import com.sungbin.kakaobot.utils.bot.BotPowerUtils
-import com.sungbin.kakaobot.utils.bot.BotRunTimeUtils
-import com.sungbin.sungbintool.StorageUtils
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
-import java.io.File
-import javax.inject.Named
+import com.sungbin.kakaobot.*
+import com.sungbin.kakaobot.model.*
+import com.sungbin.kakaobot.utils.bot.*
+import com.sungbin.sungbintool.*
+import dagger.*
+import dagger.hilt.*
+import dagger.hilt.android.components.*
+import java.io.*
+import javax.inject.*
 
 
 /**
