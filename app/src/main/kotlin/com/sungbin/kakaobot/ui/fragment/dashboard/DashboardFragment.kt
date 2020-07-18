@@ -62,6 +62,8 @@ class DashboardFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        retainInstance = false
+
         val act = requireContext()
 
         if (viewModel.jsBot.isEmpty() && viewModel.simpleBot.isEmpty()) {
