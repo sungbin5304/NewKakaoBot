@@ -69,7 +69,7 @@ class MainActivity : BaseActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, DashboardFragment.instance)
+                .replace(R.id.container, DashboardFragment.instance())
                 .commitNow()
         }
 

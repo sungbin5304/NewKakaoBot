@@ -31,7 +31,7 @@ import org.jetbrains.anko.support.v4.*
 class DashboardFragment : BaseFragment() {
 
     companion object {
-        val instance = DashboardFragment()
+        fun instance() = DashboardFragment()
     }
 
     interface OnScriptRemovedListener {
