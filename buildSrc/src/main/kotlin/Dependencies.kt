@@ -38,7 +38,7 @@ object Versions {
     const val Rhino = "1.7.12"
     const val RhinoAndroid = "1.5"
     const val KoreanParser = "1.0.0"
-    const val AndroidUtils = "3.1.4"
+    const val AndroidUtils = "3.1.5"
     const val AdapterHelper = "2.0.2"
     const val CrashReporter = "1.1.0"
 
