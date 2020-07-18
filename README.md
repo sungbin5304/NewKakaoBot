@@ -1,5 +1,5 @@
 # NewKakaoBot
-a new KakaoTalk Bot Application with MVVM Pattern!
+a new KakaoTalk Bot Application with `Hilt` + `ViewModel` + `Fragment`!
 
 # Use Libraries
 1. Hilt
