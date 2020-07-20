@@ -1,99 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fy_main_view"
-    android:layout_width="160dp"
-    android:layout_height="121dp"
-    android:layout_marginStart="1dp"
-    android:layout_marginEnd="1dp"
-    android:layout_marginBottom="3dp"
-    android:elevation="0dp"
+    android:id="@+id/cl_main_view"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:padding="@dimen/margin_default"
     android:focusableInTouchMode="true"
-    android:orientation="vertical"
-    app:elevation="0dp"
-    tools:ignore="ContentDescription,UselessParent" >
+    android:background="@drawable/bg_round_layout"
+    android:backgroundTint="@color/colorTwiceLightGray"
+    tools:backgroundTint="@color/colorLightGray"
+    tools:ignore="ContentDescription,UselessParent,MissingConstraints">
 
     <com.sungbin.sungbintool.ui.TagableRoundImageView
-        android:id="@+id/iv_type"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="@dimen/margin_half"
-        android:layout_marginBottom="@dimen/margin_half"
-        android:elevation="@dimen/margin_half"
-        android:src="@drawable/ic_javascript"
-        app:elevation="@dimen/margin_half"
-        app:triv_imageRadius="@dimen/margin_half" />
+        android:id="@+id/iv_icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/lg_outline_kakaotalk"
+        app:triv_imageRadius="@dimen/margin_half"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <androidx.cardview.widget.CardView
+    <TextView
+        android:id="@+id/tv_bot_run_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/everyday"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toTopOf="@+id/v_center_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:visibility="invisible"
+        android:id="@+id/v_center_line"
         android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_marginTop="30dp"
-        app:cardBackgroundColor="@color/colorTwiceLightGray"
-        app:cardCornerRadius="10dp" >
+        android:layout_height="5dp"
+        android:background="@color/colorPink"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
 
-        <Switch
-            android:id="@+id/sw_power"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp" />
+    <Switch
+        android:id="@+id/sw_power"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/v_center_line" />
 
-        <ImageView
-            android:id="@+id/iv_menu"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="130dp"
-            android:src="@drawable/ic_baseline_menu_24"
-            android:tint="@color/colorGray" />
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/reply_gaming"
+        android:textColor="@color/colorBlack"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        app:layout_constraintBottom_toTopOf="@+id/v_center_line"
+        app:layout_constraintEnd_toStartOf="@+id/sw_power"
+        app:layout_constraintStart_toEndOf="@+id/iv_icon"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/tv_last_run_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="@string/last_run_time"
+        android:textColor="@color/colorGray"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_icon"
+        app:layout_constraintTop_toBottomOf="@+id/v_center_line" />
 
-            <View
-                android:id="@+id/view_reload_status"
-                android:layout_width="7dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/reload_status_view"
-                android:backgroundTint="@color/colorGreen" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_half"
-                    android:layout_marginTop="40dp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:text="@string/bot"
-                    android:textColor="#000"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_last_run_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_half"
-                    android:layout_marginTop="@dimen/margin_twice_half"
-                    android:maxLines="1"
-                    android:text="@string/bot"
-                    android:textColor="@color/colorGray"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

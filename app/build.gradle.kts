@@ -15,7 +15,6 @@ android {
         versionName = Application.versionName
         multiDexEnabled = true
         setProperty("archivesBaseName", "v$versionName($versionCode)")
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -65,26 +64,17 @@ dependencies {
 
     implementation(Dependencies.Ui.Glide)
     implementation(Dependencies.Ui.CardView)
-    implementation(Dependencies.Ui.PopupMenu)
-    implementation(Dependencies.Ui.CodeEditor)
     implementation(Dependencies.Ui.SweetDialog)
     implementation(Dependencies.Ui.ConstraintLayout)
 
     implementation(Dependencies.Utils.Jsoup)
-    implementation(Dependencies.Utils.Rhino)
-    implementation(Dependencies.Utils.RhinoAndroid)
     implementation(Dependencies.Utils.KoreanParser)
     implementation(Dependencies.Utils.AndroidUtils)
-    implementation(Dependencies.Utils.AdapterHelper)
     implementation(Dependencies.Utils.CrashReporter)
 
     implementation(Dependencies.Animator.Tool)
     implementation(Dependencies.Animator.Yoyo)
     implementation(Dependencies.Animator.Lottie)
-
-    testImplementation(TestLibrary.Junit)
-    androidTestImplementation(AndroidTestLibraries.Junit)
-    androidTestImplementation(AndroidTestLibraries.Espresso)
 
     kapt(Dependencies.Di.HiltGoogleCompiler)
     kapt(Dependencies.Di.HiltAndroidXCompiler)
