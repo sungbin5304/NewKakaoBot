@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.LinearInterpolator
 import android.view.animation.RotateAnimation
-import com.google.android.material.appbar.AppBarLayout
-import com.sungbin.chatbot.listener.AppBarStateChangeListener
 import com.sungbin.chatbot.ui.fragment.main.MainFragment
 import com.sungbin.chatbot.utils.BotNotificationUtils
 import com.sungbin.chatbot.utils.BotTypeManager.FACEBOOK
@@ -117,30 +115,6 @@ class MainActivity : BaseActivity() {
 
             alert.show()*/
         }
-
-        abl_appbar.addOnOffsetChangedListener(object : AppBarStateChangeListener() {
-            override fun onStateChanged(appBarLayout: AppBarLayout?, state: State?) {
-                when (state!!) {
-                    State.COLLAPSED -> { //닫힘
-                        cl_toolbar_layout.show()
-                    }
-                    State.EXPANDED -> { //열림
-                        cl_toolbar_layout.hide()
-                    }
-                    else -> { //중간과정, Useless
-                        /*when (lastState) {
-                            State.EXPANDED -> { //이미 열렸을 경우 -> 닫음
-                                cl_toolbar_layout.show()
-                            }
-                            State.COLLAPSED -> { //이미 닫혔을 경우 -> 열림
-                                cl_toolbar_layout.hide()
-                            }
-                            else -> {} //Useless
-                        }*/
-                    }
-                }
-            }
-        })
 
         val timer = Timer()
         val timerTask = object : TimerTask() {

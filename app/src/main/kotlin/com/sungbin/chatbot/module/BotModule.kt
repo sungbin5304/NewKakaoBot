@@ -59,7 +59,7 @@ object BotModule {
     @Named("TEST")
     fun provideTest(): ArrayList<BotModel> {
         val array = ArrayList<BotModel>()
-        for(i in 0..50){
+        for(i in 0..25){
             val name = UUID.randomUUID().toString().replace("-", "").substring(0..10)
             val fixed = Random.nextBoolean()
             val lastRunTime = "마지막 작동: 없음"
