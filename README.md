@@ -5,5 +5,5 @@ a new KakaoTalk Bot Application with `Hilt` + `ViewModel` + `Fragment`!
 1. Hilt
 2. Coroutine
 
-# rinciple
+# Principle
 ![principle](https://raw.githubusercontent.com/sungbin5304/NewKakaoBot/master/images/principle.png)
