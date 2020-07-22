@@ -1,5 +1,5 @@
 # NewMessengerBot
-a new NewMessenger Bot Application with `Hilt` + `ViewModel` + `Fragment`!
+a new Messenger Bot Application with `Hilt` + `ViewModel` + `Fragment`!
 
 # Use Libraries
 1. Hilt
