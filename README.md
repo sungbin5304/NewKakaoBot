@@ -1,3 +1,7 @@
+# Project MOVED! [[GitMessengerBot]](https://github.com/sungbin5304/GitMessengerBot)
+
+-----
+
 # NewMessengerBot
 a new Messenger Bot Application with `Hilt` + `ViewModel` + `Fragment`!
 
